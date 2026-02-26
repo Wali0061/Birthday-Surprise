@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Surprise ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: linear-gradient(135deg, #ffe6f0, #fff5e6);
+  font-family: 'Georgia', serif;
+  overflow-x: hidden;
+}
+
+    h2 {
+      font-family: 'Great Vibes', cursive; /* use the imported font */
+    }
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: red;
+  top: -10px;
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  color: #ff4d6d;
+  animation: floatUp 6s linear infinite;
+  font-size: 20px;
+}
+@keyframes floatUp {
+  0% {transform: translateY(100vh); opacity: 1;}
+  100% {transform: translateY(-10vh); opacity: 0;}
+}
+
+/* Envelope */
+.envelope {
+  width: 250px;
+  margin-top: 80px;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+.envelope:hover {
+  transform: scale(1.05);
+}
+
+/* Letter */
+#letter-content {
+  display: none;
+  margin: 30px auto;
+  width: 80%;
+  max-width: 500px;
+  background: #fff9f9;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+h2 {
+  color: #d63384;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Romantic Background Music -->
+<audio id="bg-music" loop>
+  <source src="PASTE_ROMANTIC_SONG_URL_HERE" type="audio/mpeg">
+</audio>
+
+<!-- Envelope -->
+<img src="C:\Users\ISFL-14313\Downloads\1000491808.png" 
+     alt="Envelope" 
+     class="envelope"
+     onclick="openLetter()">
+
+<div id="letter-content">
+  <h2>Happy Birthday, My Bride-to-Be 💍❤️</h2>
+  <p>
+    My love,<br><br>
+    On this beautiful day, I just want you to know how deeply blessed I feel 
+    to have you in my life. Every heartbeat of mine whispers your name.  
+    You are not just my future wife… you are my forever home. 🏡❤️<br><br>
+    I promise to stand beside you, laugh with you, grow with you,  
+    and love you more with each passing year.<br><br>
+    Happy Birthday to the queen of my heart. 👑<br><br>
+    Forever yours,<br>
+    ❤️
+  </p>
+</div>
+
+<script>
+function openLetter() {
+  document.querySelector('.envelope').style.display = 'none';
+  document.getElementById('letter-content').style.display = 'block';
+  document.getElementById('bg-music').play();
+  launchConfetti();
+  createHearts();
+}
+
+function launchConfetti() {
+  for (let i = 0; i < 150; i++) {
+    const confetti = document.createElement("div");
+    confetti.classList.add("confetti");
+    
+    const colors = ["#ff4d6d", "#ffcc00", "#00c2ff", "#7b2cbf", "#00ff88"];
+    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+    
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.width = Math.random() * 8 + 5 + "px";
+    confetti.style.height = confetti.style.width;
+    confetti.style.animationDuration = (Math.random() * 2 + 2) + "s";
+
+    document.body.appendChild(confetti);
+
+    setTimeout(() => {
+      confetti.remove();
+    }, 3000);
+  }
+}
+
+function createHearts() {
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }, 500);
+}
+</script>
+
+</body>
+</html>
