@@ -79,6 +79,15 @@ body {
 h2 {
   color: #d63384;
 }
+
+.envelope-container {
+    text-align: center;
+}
+
+.envelope-container h2 {
+    margin-bottom: 10px;
+}
+
 </style>
 </head>
 
@@ -90,10 +99,16 @@ h2 {
 </audio>
 
 <!-- Envelope -->
-<img src="AnimatedPostman.gif"
-     alt="Envelope" 
-     class="envelope"
-     onclick="openLetter()">
+<div class="envelope-container">
+    <h2 class="envelope-heading">You've Got Mail 📬</h2>
+
+    <img src="AnimatedPostman.gif"
+         alt="Envelope" 
+         class="envelope"
+         onclick="openLetter()">
+
+         <h2 class="envelope-heading">Tap to Open!!!</h2>
+</div>
 
 <div id="letter-content">
   <h2>Happy Birthday, My Bride-to-Be 💍❤️</h2>
@@ -112,8 +127,18 @@ h2 {
 
 <script>
 function openLetter() {
+  // Hide the envelope GIF
   document.querySelector('.envelope').style.display = 'none';
+  
+  // Hide all headings with class "envelope-heading"
+  document.querySelectorAll('.envelope-heading').forEach(h => {
+    h.style.display = 'none';
+  });
+
+  // Show the letter
   document.getElementById('letter-content').style.display = 'block';
+
+  // Play music and launch animations
   document.getElementById('bg-music').play();
   launchConfetti();
   createHearts();
@@ -155,7 +180,3 @@ function createHearts() {
 
 </body>
 </html>
-
-
-
-
