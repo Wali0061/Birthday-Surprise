@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Birthday Surprise ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
 body {
@@ -88,6 +89,71 @@ h2 {
     margin-bottom: 10px;
 }
 
+#pre-message {
+  display: none;
+  margin-top: 40px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 32px;
+  color: #d63384;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#letter-content {
+  display: none;
+  margin: 30px auto;
+  width: 80%;
+  max-width: 500px;
+  background: #fff9f9;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: fadeIn 2s ease forwards;
+
+  font-family: 'Akaya Kanadaka', cursive; /* Add this line */
+  font-size: 22px; /* Optional: adjust size for readability */
+  color: #333;     /* Optional: adjust text color */
+  line-height: 1.6; /* Optional: improve readability */
+}
+
+.blank {
+  border-bottom: 2px solid #000;
+  display: inline-block;
+  width: 150px;
+  position: relative;
+  padding-right: 25px; /* space for the question mark */
+}
+
+.question-mark {
+  position: absolute;
+  right: 0;
+  top: -5px;
+  font-weight: bold;
+  font-size: 22px;
+  animation: bouncePop 1s infinite;
+}
+
+@keyframes bouncePop {
+  0%, 50%, 100% {
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.2);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.1);
+  }
+}
+
+.closing-image {
+  margin-top: 15px;
+  width: 150px;   /* Adjust size as needed */
+  height: auto;
+}
+
 </style>
 </head>
 
@@ -110,38 +176,62 @@ h2 {
          <h2 class="envelope-heading">Tap to Open!!!</h2>
 </div>
 
+<div id="pre-message">
+  <h2>A Birthday Note to My Bride-to-Be 💌</h2>
+</div>
+
 <div id="letter-content">
-  <h2>Happy Birthday, My Bride-to-Be 💍❤️</h2>
+  <h3>ನನ್ನ ನಲ್ಮೆಯ ಸ್ಪಂದನ ರವರಿಗೆ ಹುಟ್ಟು ಹಬ್ಬದ ಶುಭಾಶಯಗಳು 💍❤️</h3>
   <p>
-    My love,<br><br>
-    On this beautiful day, I just want you to know how deeply blessed I feel 
-    to have you in my life. Every heartbeat of mine whispers your name.  
-    You are not just my future wife… you are my forever home. 🏡❤️<br><br>
-    I promise to stand beside you, laugh with you, grow with you,  
-    and love you more with each passing year.<br><br>
-    Happy Birthday to the queen of my heart. 👑<br><br>
-    Forever yours,<br>
+    My beloved,<br><br>
+    ಈ ಸುದಿನದಂದು, ನಿಮ್ಮೆಲ್ಲ ಕನಸುಗಳು ಮತ್ತು ಆಸೆಗಳು ನನಸಾಗಲಿ. ಈ ವರ್ಷವು ನಿಮಗೆ ಹರ್ಷ ತರಲಿ ಎಂದು ಹಾರೈಸುತ್ತೇನೆ.<br><br>
+    ನಾವು ಕಳೆದ ಕಾಲ ಕೇವಲ ಕೆಲವೇ ಕ್ಷಣಗಳಿರಬಹುದು. ನಿಮ್ಮನ್ನು ಮೊದಲ ಬಾರಿಗೆ ಕಂಡಾಗಲೇ ಒಳ್ಳೆಯ vibes ಫೀಲಾಯಿತು. ನಮ್ಮ ಭೇಟಿಯ ಕ್ಷಣಗಳು ಇನ್ನೂ ಸ್ವಲ್ಪ ಕ್ಷಣಗಳಿರಬಹುದಿತ್ತು ಅಂತ ಅನಿಸುತ್ತಿದೆ.
+    ನಿಮ್ಮ ಬಳಿ ನಮ್ಮ ಒಂದು ಚಿಕ್ಕ ಮನವಿ ಇದೆ…ಇನ್ನೂ ಸ್ವಲ್ಪೇ ಸ್ವಲ್ಪ ಜಾಸ್ತಿ ಮಾತಾಡ್ರಿ. ನಿಮ್ಮ ಮಾತು ಕೇಳೋಣ ಎಂದು ನಮಿಗೂ ಅನಿಸುತ್ತೆ… 😉<br><br>
+    ಈ ಬಡವನದೊಂದು ಸಣ್ಣ ಪ್ರಯತ್ನ. ಲೋಪ ದೋಷಗಳಿದ್ದಲ್ಲಿ ಕ್ಷಮೆ ಇರಲಿ.<br><br>
+    ನಮ್ಮ ಈ ಸಣ್ಣ ಪ್ರಯತ್ನ ನಿಮಗೆ ಇಷ್ಟವಾದರೆ, ದಯವಿಟ್ಟು ಈ ಪತ್ರವನ್ನು ನಿಮ್ಮ ಹೃದಯದಲ್ಲಿ ಒಂದು ಸಣ್ಣ ಸ್ಥಾನ ನೀಡಿ. ನಿಮ್ಮ ಪ್ರೀತಿಯ ಸ್ಪಂದನವನ್ನು ಕೇಳಲು ನಾವು ಕಾಯುತ್ತಿರುತ್ತೇನೆ.<br><br>
+    ಇಂತಿ ನಿಮ್ಮ <span class="blank"><span class="question-mark">?</span></span><br>
+    <img src="C:\Users\ISFL-14313\Downloads\signature_transparent.png" alt="Signature" class="closing-image">
+    <br>
     ❤️
   </p>
 </div>
 
 <script>
 function openLetter() {
-  // Hide the envelope GIF
+  // Hide envelope GIF
   document.querySelector('.envelope').style.display = 'none';
-  
-  // Hide all headings with class "envelope-heading"
+
+  // Hide all envelope headings
   document.querySelectorAll('.envelope-heading').forEach(h => {
     h.style.display = 'none';
   });
 
-  // Show the letter
-  document.getElementById('letter-content').style.display = 'block';
+  const preMessage = document.getElementById('pre-message');
+  const letter = document.getElementById('letter-content');
 
-  // Play music and launch animations
-  document.getElementById('bg-music').play();
-  launchConfetti();
-  createHearts();
+  // Show pre-message
+  preMessage.style.display = 'block';
+
+  // Small delay to allow display before fading in
+  setTimeout(() => {
+    preMessage.style.opacity = '1';
+  }, 50);
+
+  // After 2 seconds, fade it out
+  setTimeout(() => {
+    preMessage.style.opacity = '0';
+  }, 2000);
+
+  // After fade-out completes, hide message and show letter
+  setTimeout(() => {
+    preMessage.style.display = 'none';
+    letter.style.display = 'block';
+
+    // Play music and launch animations
+    document.getElementById('bg-music').play();
+    launchConfetti();
+    createHearts();
+  }, 3000);
 }
 
 function launchConfetti() {
@@ -180,4 +270,3 @@ function createHearts() {
 
 </body>
 </html>
-
